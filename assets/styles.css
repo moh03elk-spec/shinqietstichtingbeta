@@ -286,6 +286,25 @@ ul { list-style: none; margin: 0; padding: 0; }
   border: 1px solid #ddd;
   font-size: inherit;
 }
+
+.donation-presets {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.btn-preset {
+  background-color: var(--sandstone-light);
+  color: var(--charcoal);
+  border-color: var(--sandstone);
+}
+
+.btn-preset.active {
+  background-color: var(--primary-dark);
+  color: var(--white);
+  border-color: var(--primary-dark);
+}
 .contact-form label { display: block; margin-bottom: var(--space-2); font-weight: 600; }
 .contact-form input, .contact-form textarea {
   width: 100%;

@@ -40,6 +40,30 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --- Stripe Donation Logic ---
+  const donationPresets = document.querySelectorAll('.btn-preset');
+  const amountInput = document.getElementById('amount');
+
+  if (donationPresets.length > 0 && amountInput) {
+    donationPresets.forEach(button => {
+      button.addEventListener('click', () => {
+        // Update the input field
+        amountInput.value = button.dataset.amount;
+
+        // Update active state
+        donationPresets.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+      });
+    });
+
+    // Set initial active state
+    const initialAmount = amountInput.value;
+    const initialActiveButton = document.querySelector(`.btn-preset[data-amount="${initialAmount}"]`);
+    if (initialActiveButton) {
+      initialActiveButton.classList.add('active');
+    }
+  }
+
+  // 1. Simple Payment Link
   // 1. Simple Payment Link
   const paymentLink = document.getElementById('payment-link');
   if (paymentLink) {
