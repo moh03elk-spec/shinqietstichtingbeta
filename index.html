@@ -123,7 +123,7 @@
     <section id="doneren" class="section donate-section">
       <div class="container grid-2">
         <div>
-          <h2>Steun Stichting Shinqiet</h2>
+          <h2 class="donation-section-title">Steun Stichting Shinqiet</h2>
           <p>Met uw bijdrage maken we duurzaam onderwijs en maatschappelijke projecten mogelijk.</p>
           <form id="donation-form" class="donation-form">
             <div class="donation-presets">
@@ -140,6 +140,10 @@
               <label class="sr-only" for="amount">Bedrag</label>
               <input id="amount" name="amount" type="number" min="2" step="1" value="10" placeholder="€ Bedrag" />
               <button type="submit" class="btn btn-donate" id="donate-button">Doneren met Stripe</button>
+            </div>
+            <div class="form-row checkbox-row">
+              <input type="checkbox" id="recurring" name="recurring">
+              <label for="recurring">Maandelijks doneren</label>
             </div>
           </form>
           <p class="muted small">ANBI</p>
