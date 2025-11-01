@@ -136,9 +136,11 @@
               <button type="button" class="btn btn-preset" data-amount="750">€750</button>
               <button type="button" class="btn btn-preset" data-amount="1000">€1000</button>
             </div>
-            <label class="sr-only" for="amount">Bedrag</label>
-            <input id="amount" name="amount" type="number" min="2" step="1" value="10" placeholder="€ Bedrag" />
-            <button type="submit" class="btn btn-donate" id="donate-button">Doneren met Stripe</button>
+            <div class="donation-input-group">
+              <label class="sr-only" for="amount">Bedrag</label>
+              <input id="amount" name="amount" type="number" min="2" step="1" value="10" placeholder="€ Bedrag" />
+              <button type="submit" class="btn btn-donate" id="donate-button">Doneren met Stripe</button>
+            </div>
           </form>
           <p class="muted small">ANBI</p>
           <p class="muted small">Of gebruik onze <a id="payment-link" href="#">vaste betaallink</a>.</p>

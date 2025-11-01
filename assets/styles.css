@@ -278,7 +278,20 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 .time-card strong { display: block; margin-bottom: var(--space-2); }
 .donate-section { background: linear-gradient(180deg, var(--sandstone-light), var(--white)); }
-.donation-form { display: flex; gap: var(--space-3); align-items: center; margin-bottom: var(--space-4); }
+.donation-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.donation-input-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
 .donation-form input {
   width: 160px;
   padding: var(--space-3);
