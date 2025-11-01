@@ -135,4 +135,23 @@ document.addEventListener('DOMContentLoaded', () => {
       window.location.href = `mailto:stichtingsseo@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     });
   }
+
+  // --- Typewriter Effect ---
+  function typeWriter(element, text, speed) {
+    let i = 0;
+    element.textContent = ''; // Clear existing text
+    function type() {
+      if (i < text.length) {
+        element.textContent += text.charAt(i);
+        i++;
+        setTimeout(type, speed);
+      }
+    }
+    type();
+  }
+
+  const heroTitle = document.querySelector('.hero h1');
+  if (heroTitle && heroTitle.dataset.typeText) {
+    typeWriter(heroTitle, heroTitle.dataset.typeText, 75);
+  }
 });
