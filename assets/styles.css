@@ -305,8 +305,8 @@ ul { list-style: none; margin: 0; padding: 0; }
   grid-template-columns: repeat(4, 1fr);
   gap: var(--space-3);
   margin-bottom: var(--space-4);
-  max-width: fit-content; /* Added to allow centering */
-  justify-self: center; /* Added for centering within the form */
+  max-width: fit-content;
+  margin-inline: auto;
 }
 
 .btn-preset {
