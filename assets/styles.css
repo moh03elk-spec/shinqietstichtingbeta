@@ -286,39 +286,57 @@ ul { list-style: none; margin: 0; padding: 0; }
   margin-bottom: var(--space-4);
 }
 
-.donation-input-group {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-}
-
-.donation-form input {
-  width: 160px;
-  padding: var(--space-3);
-  border-radius: var(--radius-md);
-  border: 1px solid #ddd;
-  font-size: inherit;
-}
-
-.donation-presets {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-3);
-  margin-bottom: var(--space-4);
-  max-width: fit-content;
-  margin-inline: auto;
-}
-
 .btn-preset {
   background-color: var(--sandstone-light);
   color: var(--charcoal);
-  border-color: var(--sandstone);
+  border: 1px solid var(--sandstone);
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-preset:hover {
+  background-color: var(--sandstone);
+  color: var(--white);
+  transform: translateY(-2px);
 }
 
 .btn-preset.active {
   background-color: var(--primary-dark);
   color: var(--white);
   border-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.donation-input-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background-color: var(--white);
+  padding: var(--space-2);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+.donation-input-group input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1.2rem;
+  font-weight: bold;
+  width: 120px;
+}
+
+.contact-list-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.contact-list-item svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--sandstone-light);
 }
 .contact-form label { display: block; margin-bottom: var(--space-2); font-weight: 600; }
 .contact-form input, .contact-form textarea {
