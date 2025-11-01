@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="nl" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stichting Shinqiet – Educatie & Opvoeding</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script type="module" src="assets/app.js" defer></script>
+  <meta name="theme-color" content="#B6382E" />
+</head>
+<body>
+  <div class="top-arabic">
+    <div class="container">
+      <span class="arabic">مؤسسة شنقيط للتعليم والتربية</span>
+    </div>
+  </div>
+
+  <header class="site-header" id="home">
+    <div class="container nav-container">
+      <a class="brand" href="#home">
+        <img src="assets/logo.jpg" alt="Stichting Shinqiet" />
+        <span class="brand-text">Stichting Shinqiet</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Hoofdmenu">
+        <ul id="nav-list">
+          <li><a href="#over">Over</a></li>
+          <li class="has-dropdown">
+            <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Onderwijs</button>
+            <ul class="dropdown" role="menu">
+              <li role="none"><a role="menuitem" href="#onderwijs">Arabisch</a></li>
+              <li role="none"><a role="menuitem" href="#onderwijs">Koran</a></li>
+              <li role="none"><a role="menuitem" href="#onderwijs">Islam</a></li>
+              <li role="none"><a role="menuitem" href="#contact">Afmelden onderwijs</a></li>
+            </ul>
+          </li>
+          <li><a href="#gebedstijden">Gebedstijden</a></li>
+          <li><a href="#doneren" class="btn btn-donate">Doneren</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button id="nav-toggle" class="nav-toggle" aria-label="Menu openen/sluiten" aria-controls="nav-list" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <div class="hero-subtitle">
+            <p class="arabic-large">مؤسسة شنقيط للتعليم والتربية</p>
+          </div>
+          <h1>Welkom bij Stichting Shinqiet Educatie & Opvoeding - SSEO</h1>
+          <div class="hero-cta">
+            <a href="#onderwijs" class="btn">Bekijk onderwijs</a>
+            <a href="#doneren" class="btn btn-outline">Steun met een donatie</a>
+          </div>
+        </div>
+        <figure class="hero-figure" aria-hidden="true">
+          <img src="assets/logo.jpg" alt="Logo Stichting Shinqiet" loading="lazy" />
+        </figure>
+      </div>
+    </section>
+
+    <section id="over" class="section">
+      <div class="container grid-2">
+        <div>
+          <h2>Over de stichting</h2>
+          <p>Shinqiet zet zich in voor kwalitatief onderwijs, maatschappelijke betrokkenheid en het behoud van cultureel erfgoed. Wij bieden programma's voor kinderen, jongeren en volwassenen.</p>
+        </div>
+        <div class="card">
+          <h3>Kernwaarden</h3>
+          <ul class="checklist">
+            <li>Toegankelijk onderwijs</li>
+            <li>Respect & verantwoordelijkheid</li>
+            <li>Gemeenschapsdienst</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="onderwijs" class="section neutral">
+      <div class="container">
+        <h2 class="section-title">Onderwijs</h2>
+        <p>Onze onderwijsactiviteiten zijn onderverdeeld in drie pijlers. Klik door om je aan te melden of het rooster te bekijken.</p>
+        <div class="cards-grid">
+          <a class="card link-card" href="#contact">
+            <h3>Arabisch</h3>
+            <p>Taalonderwijs voor diverse niveaus.</p>
+          </a>
+          <a class="card link-card" href="#contact">
+            <h3>Koran</h3>
+            <p>Lezen, memoriseren en Tajwied.</p>
+          </a>
+          <a class="card link-card" href="#contact">
+            <h3>Islam</h3>
+            <p>Geloofsleer, fiqh en leefstijl.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="gebedstijden" class="section neutral">
+      <div class="container">
+        <h2 class="section-title">Gebedstijden</h2>
+        <div class="prayer-times" aria-live="polite">
+          <div class="time-card"><strong>Fajr</strong> <span data-pt="fajr">—</span></div>
+          <div class="time-card"><strong>Dhuhr</strong> <span data-pt="dhuhr">—</span></div>
+          <div class="time-card"><strong>Asr</strong> <span data-pt="asr">—</span></div>
+          <div class="time-card"><strong>Maghrib</strong> <span data-pt="maghrib">—</span></div>
+          <div class="time-card"><strong>Isha</strong> <span data-pt="isha">—</span></div>
+        </div>
+        <p class="muted small">* Gebedstijden voor Utrecht. Voor een andere stad, gebruik een externe widget.</p>
+      </div>
+    </section>
+
+    <section id="doneren" class="section donate-section">
+      <div class="container grid-2">
+        <div>
+          <h2>Steun Stichting Shinqiet</h2>
+          <p>Met uw bijdrage maken we duurzaam onderwijs en maatschappelijke projecten mogelijk.</p>
+          <form id="donation-form" class="donation-form">
+            <label class="sr-only" for="amount">Bedrag</label>
+            <input id="amount" name="amount" type="number" min="2" step="1" value="10" placeholder="€ Bedrag" />
+            <button type="submit" class="btn btn-donate" id="donate-button">Doneren met Stripe</button>
+          </form>
+          <p class="muted small">ANBI</p>
+          <p class="muted small">Of gebruik onze <a id="payment-link" href="#">vaste betaallink</a>.</p>
+        </div>
+        <div class="card">
+          <h3>Transparantie</h3>
+          <ul class="checklist">
+            <li>Jaarverslagen openbaar</li>
+            <li>Projectgebonden donaties</li>
+            <li>Veilige betalingen via Stripe</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container grid-2">
+        <div>
+          <h2>Contact</h2>
+          <address class="contact-details">
+            <div class="contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>De Bazelstraat 39, Utrecht</span>
+            </div>
+            <div class="contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <a href="tel:+31687097712">06 87097712</a>
+            </div>
+            <div class="contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <a href="mailto:stichtingsseo@gmail.com">stichtingsseo@gmail.com</a>
+            </div>
+          </address>
+        </div>
+        <div>
+          <h2 class="section-title">Aanmelden voor les</h2>
+          <form id="aanmeld-formulier" class="card registration-form" aria-label="Aanmeldformulier voor lessen">
+            <div class="form-row">
+              <label for="voornaam">Voornaam</label>
+              <input id="voornaam" name="voornaam" type="text" required>
+            </div>
+            <div class="form-row">
+              <label for="achternaam">Achternaam</label>
+              <input id="achternaam" name="achternaam" type="text" required>
+            </div>
+            <div class="form-row">
+              <label for="geboortedatum">Geboortedatum</label>
+              <input id="geboortedatum" name="geboortedatum" type="date" required>
+            </div>
+            <div class="form-row">
+              <label for="email_aanmelden">E-mail</label>
+              <input id="email_aanmelden" name="email" type="email" required>
+            </div>
+            <div class="form-row">
+              <label for="telefoon">Telefoonnummer</label>
+              <input id="telefoon" name="telefoon" type="tel" required>
+            </div>
+            <div class="form-row">
+              <label for="activiteit">Kies een activiteit</label>
+              <select id="activiteit" name="activiteit" required>
+                <option value="" disabled selected>-- Maak een keuze --</option>
+                <option value="Koranles">Koranles: Lezen, memoriseren en Tajweed</option>
+                <option value="Islam">Islam: Geloofsleer, fiqh en leefstijl</option>
+                <option value="Arabisch">Arabisch: Taalonderwijs voor diverse niveaus</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="bericht_aanmelden">Bericht</label>
+              <textarea id="bericht_aanmelden" name="bericht" rows="4"></textarea>
+            </div>
+            <button class="btn" type="submit">Aanmelding versturen</button>
+          </form>
+
+          <h2 class="section-title" style="margin-top: var(--space-12);">Algemeen contact</h2>
+          <form class="card contact-form" aria-label="Contactformulier">
+            <label for="name">Naam</label>
+            <input id="name" type="text" required>
+            <label for="email">E-mail</label>
+            <input id="email" type="email" required>
+            <label for="message">Bericht</label>
+            <textarea id="message" rows="4" required></textarea>
+            <button class="btn" type="submit">Verstuur</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-org">
+        <a class="brand" href="#home">
+          <img src="assets/logo.jpg" alt="Stichting Shinqiet" />
+          <span class="brand-text">Stichting Shinqiet</span>
+        </a>
+        <p>KvK: <strong>88321746</strong></p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/profile.php?id=100089272375112" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+          <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+        </div>
+      </div>
+      <nav class="footer-links" aria-label="Secundair menu">
+        <div>
+          <h4>Leden</h4>
+          <ul>
+            <li><a href="#">Lid worden</a></li>
+            <li><a href="#">Vrijwilliger worden</a></li>
+            <li><a href="#">Vacatures</a></li>
+            <li><a href="#gebedstijden">Gebedstijden</a></li>
+            <li><a href="#contact">Uitschrijven</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Onderwijs</h4>
+          <ul>
+            <li><a href="#onderwijs">Onderwijsaanbod</a></li>
+            <li><a href="#">Onderwijsgids</a></li>
+            <li><a href="#doneren">Doneren</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Beleid</h4>
+          <ul>
+            <li><a href="#">ANBI-status</a></li>
+            <li><a href="#">Privacybeleid</a></li>
+            <li><a href="#">Disclaimer</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="copyright">
+      <div class="container">
+        &copy; <span id="year"></span> Stichting Shinqiet. Alle rechten voorbehouden.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
