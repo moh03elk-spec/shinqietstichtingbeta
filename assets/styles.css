@@ -438,6 +438,13 @@ ul { list-style: none; margin: 0; padding: 0; }
   color: var(--white);
 }
 
+.kvk-info {
+  text-align: center;
+  margin-top: var(--space-4);
+  font-size: 0.9rem;
+  color: var(--sandstone-light);
+}
+
 .footer-links h4 {
   color: var(--white);
   margin-bottom: var(--space-4);
