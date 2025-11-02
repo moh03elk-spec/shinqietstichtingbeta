@@ -8,6 +8,15 @@ document.addEventListener('DOMContentLoaded', () => {
       mainNav.setAttribute('data-visible', !isVisible);
       navToggle.setAttribute('aria-expanded', !isVisible);
     });
+
+    // Close mobile menu when a menu item is clicked
+    const navLinks = mainNav.querySelectorAll('a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mainNav.setAttribute('data-visible', 'false');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
   }
 
   // --- Dropdown Menu Logic ---
@@ -40,30 +49,63 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --- Stripe Donation Logic ---
-  const donationPresets = document.querySelectorAll('.btn-preset');
+  const donationPresets = document.querySelectorAll('.donation-presets .btn-preset'); // Select only numerical presets
   const amountInput = document.getElementById('amount');
+  const manualInputToggle = document.getElementById('manual-input-toggle');
+  const donationInputGroup = document.querySelector('.donation-input-group');
 
-  if (donationPresets.length > 0 && amountInput) {
+  if (donationPresets.length > 0 && amountInput && manualInputToggle && donationInputGroup) {
+    // Function to deactivate all preset buttons
+    const deactivatePresets = () => {
+      donationPresets.forEach(btn => btn.classList.remove('active'));
+    };
+
+    // Event listener for numerical preset buttons
     donationPresets.forEach(button => {
       button.addEventListener('click', () => {
-        // Update the input field
         amountInput.value = button.dataset.amount;
-
-        // Update active state
-        donationPresets.forEach(btn => btn.classList.remove('active'));
+        deactivatePresets();
         button.classList.add('active');
+        donationInputGroup.classList.remove('hidden'); // Always show input group when a preset is clicked
       });
     });
 
-    // Set initial active state
+    // Event listener for "Ander bedrag handmatig invoeren" button
+    manualInputToggle.addEventListener('click', () => {
+      donationInputGroup.classList.toggle('hidden');
+      deactivatePresets();
+      if (!donationInputGroup.classList.contains('hidden')) {
+        amountInput.value = ''; // Clear input when showing manual input
+        amountInput.focus();
+      } else {
+        // If manual input is hidden, set a default amount and activate it
+        amountInput.value = '10';
+        const defaultPreset = document.querySelector('.btn-preset[data-amount="10"]');
+        if (defaultPreset) {
+          defaultPreset.classList.add('active');
+        }
+      }
+    });
+
+    // Event listener for manual amount input
+    amountInput.addEventListener('input', () => {
+      deactivatePresets(); // Deactivate presets when user types
+    });
+
+    // Set initial active state and visibility
     const initialAmount = amountInput.value;
     const initialActiveButton = document.querySelector(`.btn-preset[data-amount="${initialAmount}"]`);
     if (initialActiveButton) {
       initialActiveButton.classList.add('active');
+      donationInputGroup.classList.remove('hidden'); // Ensure visible
+    } else {
+      // If initial amount doesn't match a preset, ensure manual input is visible and set a default
+      deactivatePresets();
+      donationInputGroup.classList.remove('hidden');
+      amountInput.value = '10';
     }
   }
 
-  // 1. Simple Payment Link
   // 1. Simple Payment Link
   const paymentLink = document.getElementById('payment-link');
   if (paymentLink) {
@@ -140,11 +182,32 @@ document.addEventListener('DOMContentLoaded', () => {
   function typeWriter(element, text, speed) {
     let i = 0;
     element.textContent = ''; // Clear existing text
+    const targetPhrase = "Stichting Shinqiet";
+    const highlightClass = "highlight-text";
+
+    let processedText = text;
+    // Conditionally add <br> tags for mobile
+    if (window.innerWidth <= 720) { // Check for mobile screen size
+      processedText = processedText.replace("Welkom bij", "Welkom bij<br>");
+      processedText = processedText.replace("Stichting Shinqiet", "Stichting Shinqiet<br>");
+    }
+
     function type() {
-      if (i < text.length) {
-        element.textContent += text.charAt(i);
-        i++;
+      if (i < processedText.length) {
+        // Check if the next characters form a <br> tag
+        if (processedText.substring(i, i + 4) === '<br>') {
+          element.innerHTML += '<br>';
+          i += 4; // Skip the <br> characters
+        } else {
+          element.textContent += processedText.charAt(i);
+          i++;
+        }
         setTimeout(type, speed);
+      } else {
+        // After typing is complete, apply highlighting
+        const currentText = element.textContent;
+        const highlightedHtml = currentText.replace(targetPhrase, `<span class="${highlightClass}">${targetPhrase}</span>`);
+        element.innerHTML = highlightedHtml;
       }
     }
     type();
