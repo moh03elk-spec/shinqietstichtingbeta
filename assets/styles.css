@@ -92,22 +92,6 @@ ul { list-style: none; margin: 0; padding: 0; }
 .muted { color: var(--gray-600); }
 .small { font-size: 0.9rem; }
 
-/* --- TOP ARABIC BAR --- */
-.top-arabic {
-  background-color: var(--primary-dark);
-  color: var(--white);
-  padding: var(--space-2) 0;
-  text-align: center;
-}
-.top-arabic .arabic {
-  font-family: var(--font-arabic);
-  font-size: 1.0rem;
-}
-
-.top-arabic .highlight-text {
-  color: var(--white); /* Ensure it's white in the top bar */
-}
-
 /* --- HEADER & NAVIGATIE --- */
 .site-header {
   position: sticky;
@@ -541,14 +525,6 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 
 @media (max-width: 720px) {
-  :root { --fs-h1: 1.5rem; --fs-h2: 1.7rem; }
-  .hero-subtitle .arabic-large {
-    font-size: 3rem; /* Reduced mobile font size */
-    white-space: normal; /* Allow wrapping on mobile */
-  }
-  .hero-subtitle .arabic-large .highlight-text {
-    display: block; /* Force line break after this span */
-  }
   .hero h1 {
     max-width: 90%; /* Constrain width to force wrapping */
     margin-inline: auto; /* Center the block-level h1 */
@@ -591,87 +567,6 @@ ul { list-style: none; margin: 0; padding: 0; }
   }
   .cards-grid, .prayer-times { grid-template-columns: 1fr; }
   .footer-links { grid-template-columns: 1fr 1fr; }
-}
-
-/* --- CUSTOM ADDITIONS --- */
-.hero-subtitle {
-  margin-top: var(--space-6);
-  margin-bottom: var(--space-4);
-}
-.hero-subtitle p {
-  margin: 0;
-  font-family: var(--font-arabic);
-  font-size: 1.5rem;
-  color: var(--gray-600);
-}
-.hero-subtitle .arabic-large {
-  font-size: 5rem; /* Desktop */
-  color: var(--charcoal);
-  font-weight: 700;
-  opacity: 0; /* Start hidden for animation */
-  animation: fadeInScale 1.5s ease-out forwards; /* Animation properties */
-  animation-delay: 0.5s; /* Delay to allow other elements to load */
-  white-space: nowrap; /* Force single line */
-  transition: transform 0.3s ease, text-shadow 0.3s ease; /* Smooth transitions for hover */
-}
-
-.hero-subtitle .arabic-large:hover {
-  transform: scale(1.2); /* Enlarge on hover */
-  text-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Subtle glow/depth */
-  cursor: pointer; /* Indicate interactivity */
-}
-
-@keyframes fadeInScale {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.contact-details {
-  font-style: normal;
-}
-
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  margin-bottom: var(--space-4);
-}
-
-.contact-item svg {
-  width: 24px;
-  height: 24px;
-  stroke: var(--white);
-}
-
-.social-links {
-  display: flex;
-  gap: var(--space-4);
-  margin-top: var(--space-6);
-}
-
-.social-links a {
-  color: var(--sandstone-light);
-  transition: color var(--transition-base);
-}
-
-.social-links a:hover {
-  color: var(--white);
-}
-
-.social-links svg {
-  width: 28px;
-  height: 28px;
-  stroke: currentColor;
-}
-
-.highlight-text {
-  color: var(--primary-dark);
 }
 
 /* --- Registration Form --- */
