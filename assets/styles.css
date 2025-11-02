@@ -203,7 +203,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 .hero h1 {
   font-size: var(--fs-h1);
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-6);
 }
 .hero h1 span { color: var(--primary); }
 .hero p { font-size: 1.1rem; margin-bottom: var(--space-8); }
